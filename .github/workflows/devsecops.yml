@@ -29,6 +29,6 @@ jobs:
         pytest
 
     - name: Code Scan with Snyk
-      uses: snyk/actions/python@v3
+      uses: snyk/actions/python@v4
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
