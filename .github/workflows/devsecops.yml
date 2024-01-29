@@ -12,3 +12,23 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
+   
+    - name: Set Up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Install Dependencies
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+        pip install -r requirements.txt
+
+    - name: Run Tests
+      run: |
+        pytest
+
+    - name: Code Scan with Snyk
+      uses: snyk/actions/python@v3
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
