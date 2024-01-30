@@ -14,9 +14,9 @@ jobs:
     - name: Set Up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.8'
+        python-version: '3.13.0'
     - name: Code Scan with Snyk
-      uses: snyk/actions/python-3.8@master
+      uses: snyk/actions/python-3.13@master
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
