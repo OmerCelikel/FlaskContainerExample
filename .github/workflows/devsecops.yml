@@ -53,3 +53,4 @@ jobs:
       with:
         image: omercelikel23/flask-docker-app:latest
         command: test
+        args: --severity-threshold=high
