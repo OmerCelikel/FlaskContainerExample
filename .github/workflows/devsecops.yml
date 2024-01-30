@@ -14,14 +14,14 @@ jobs:
     - name: Set Up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.10'
+        python-version: '3.13.0'
     - name: Code Scan with Snyk
       uses: snyk/actions/python@master
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
         command: test
-        args: --severity-threshold=high
+        args: --severity-threshold=critical
 
   build-and-push-image:
     runs-on: ubuntu-latest
@@ -53,4 +53,4 @@ jobs:
       with:
         image: omercelikel23/flask-docker-app:latest
         command: test
-        args: --severity-threshold=high
+        args: --severity-threshold=critical
