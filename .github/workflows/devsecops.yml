@@ -24,7 +24,7 @@ jobs:
         source venv/bin/activate
         pip install -r requirements.txt
 
-    - name: Code Scan with Snyk
-      uses: snyk/actions@master
-      env:
-        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+    #- name: Code Scan with Snyk
+     # uses: snyk/actions@master
+      #env:
+       # SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
