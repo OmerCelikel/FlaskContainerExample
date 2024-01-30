@@ -8,3 +8,5 @@ def hello_geek():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+#docker run -p 8080:8080 flask-docker-app
