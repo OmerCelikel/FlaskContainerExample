@@ -66,7 +66,7 @@ jobs:
     - name: Set up Google Cloud SDK
       uses: google-github-actions/setup-gcloud@v2
       with:
-        service_account_key: ${{ secrets.GKE_SA_KEY }}
+        credentials_json: ${{ secrets.GKE_SA_KEY }}
         project_id: polar-standard-412817
 
     - name: Connect to GKE
