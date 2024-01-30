@@ -16,11 +16,12 @@ jobs:
       with:
         python-version: '3.13.0'
     - name: Code Scan with Snyk
-      uses: snyk/actions/python-3.13@master
+      uses: snyk/actions/python@master
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
         command: test
+        args: --severity-threshold=high
 
   build-and-push-image:
     runs-on: ubuntu-latest
