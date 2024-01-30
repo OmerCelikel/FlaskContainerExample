@@ -76,7 +76,8 @@ jobs:
       
     - name: Connect to GKE
       run: |
-        gcloud container clusters get-credentials autopilot-cluster-1 --region europe-southwest1 --project polar-standard-412817
+        gcloud container clusters get-credentials autopilot-cluster-1 --region europe-southwest1 --project polar-standard-412817 --use-legacy-auth
+      
       
 
     - name: Deploy to GKE
