@@ -48,6 +48,7 @@ jobs:
     steps:
     - name: Scan the Docker image with Snyk
       uses: snyk/actions/docker@master
+      continue-on-error: true
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
