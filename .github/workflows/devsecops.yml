@@ -69,6 +69,9 @@ jobs:
         credentials_json: ${{ secrets.GKE_SA_KEY }}
         project_id: polar-standard-412817
 
+    - name: Authenticate with Google Cloud
+      run: gcloud auth activate-service-account --key-file=<(echo ${{ secrets.GKE_SA_KEY }})
+      
     - name: Connect to GKE
       run: |
         gcloud container clusters get-credentials autopilot-cluster-1 --region europe-southwest1 --project polar-standard-412817
