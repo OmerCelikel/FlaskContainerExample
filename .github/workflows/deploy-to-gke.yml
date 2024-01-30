@@ -23,4 +23,4 @@ jobs:
         gcloud container clusters get-credentials autopilot-cluster-1 --region europe-west1 --project polar-standard-412817
 
     - name: Deploy to GKE
-      run: kubectl apply -f deploy-to-gke.yml
+      run: kubectl apply -f deployment.yaml
