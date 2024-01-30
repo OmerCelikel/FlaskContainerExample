@@ -70,7 +70,9 @@ jobs:
         project_id: polar-standard-412817
 
     - name: Authenticate with Google Cloud
-      run: gcloud auth activate-service-account --key-file=<(echo ${{ secrets.GKE_SA_KEY }})
+      run: |
+        echo '${{ secrets.GKE_SA_KEY }}' > gcloud-service-key.json
+        gcloud auth activate-service-account --key-file=gcloud-service-key.json
       
     - name: Connect to GKE
       run: |
