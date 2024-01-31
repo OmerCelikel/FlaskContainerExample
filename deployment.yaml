@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: github-actions-gke
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: github-actions-gke
@@ -13,7 +13,26 @@ spec:
         app: github-actions-gke
     spec:
       containers:
-      - name: github-actions-gke-container
-        image: omercelikel23/flask-docker-app:latest  # Docker Hub'dan çekilecek imaj
-        ports:
-        - containerPort: 80  # Konteynerın dinleyeceği port
+        - name: app
+          image: gcr.io/PROJECT_ID/IMAGE:TAG
+          imagePullPolicy: Always
+
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: github-actions-gke
+#spec:
+#  replicas: 3
+#  selector:
+#    matchLabels:
+#      app: github-actions-gke
+#  template:
+#    metadata:
+#      labels:
+#        app: github-actions-gke
+#    spec:
+#      containers:
+#      - name: github-actions-gke-container
+#        image: omercelikel23/flask-docker-app:latest  # Docker Hub'dan çekilecek imaj
+#        ports:
+#        - containerPort: 80  # Konteynerın dinleyeceği port
