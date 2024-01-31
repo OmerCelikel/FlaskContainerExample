@@ -58,6 +58,7 @@ jobs:
 
   build-push-gcr:
     name: Build and Deploy to GKE
+    needs: image-scan
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: My First Project
